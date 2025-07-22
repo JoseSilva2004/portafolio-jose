@@ -5,9 +5,12 @@ import Layout from '../layouts/Layout.astro';
 <Layout title="José Silva">
   <section id="inicio" class="hero">
     <div class="hero-content">
+      <div class="profile-frame">
+        <img src="/foto.png" alt="Foto de perfil" class="profile-image" />
+      </div>
       <h1>¡Hola!, soy <span class="highlight">José Silva</span></h1>
       <h2>Backend Developer</h2>
-      <p>Soy Estudiante de <span style="color:#4cc9f0; font-weight: :bold; font-size: 22px;">informática</span> con conocimiento en el desarrollo web. Me especializo en construir, mantener y optimizar aplicaciones web, siempre buscando mejorar mis habilidades y aplicar buenas prácticas en el desarrollo.</p>
+      <p>Soy Estudiante de <span style="color:#4cc9f0; font-weight: :bold; font-size: 22px;">informática</span> con conocimiento en el desarrollo web. Me especializo en construir, mantener y optimizar aplicaciones web, siempre buscando mejorar mis habilidades y aplicar buenas prácticas en el desarrollo, además cuento con más de dos años de experiencia en el desarrollo web.</p>
       <a href="#contacto" class="cta-button">Contáctame</a>
     </div>
   </section>
@@ -17,7 +20,7 @@ import Layout from '../layouts/Layout.astro';
     <div class="projects-grid">
       <div class="project-card">
         <h3>Sistema de Inventario</h3>
-        <p>desarrollé un sistema de inventario para llevar el control de los calzados registrados en una empresa.</p>
+        <p>permite llevar el control de los calzados registrados en una empresa para la gestión correcta de inventarios.</p>
         <a href="" class="repo-proyect">
           <i class="fab fa-github"></i>
           <span style="margin-left: 0.2rem;">Repositorio</span>
@@ -27,7 +30,7 @@ import Layout from '../layouts/Layout.astro';
       </div>
       <div class="project-card">
         <h3>Sitio Web estático para empresa de aerolínea</h3>
-        <p>Proyecto final de la asignatura IHM(Interacción hombre-máquina)</p>
+        <p>Landing page para la promoción de vuelos y servicios de una aerolínea.</p>
         <a href="https://github.com/JoseSilva2004/Freeway-Airlines" class="repo-proyect">
           <i class="fab fa-github"></i>
           <span style="margin-left: 0.2rem;">Repositorio</span>
@@ -367,4 +370,52 @@ import Layout from '../layouts/Layout.astro';
       padding: 3rem 1rem;
     }
   }
+
+  /* Estilos para el marco de perfil */
+.profile-frame {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 5px solid #4cc9f0;
+  padding: 5px;
+  background: linear-gradient(145deg, #1a1a2e, #16213e);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  margin: 0 auto 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.profile-frame:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.profile-frame:hover .profile-image {
+  transform: scale(1.05);
+}
+
+/* Ajustes para la sección hero con imagen */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .profile-frame {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 1.5rem;
+  }
+}
 </style>
